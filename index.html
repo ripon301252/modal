@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+    <div class="text-center mt-64">
+        <button id="open-modal" class="bg-blue-500 py-2 text-white hover:bg-[yellow] hover:text-black px-4 rounded-lg font-bold">Open Modal</button>
+    </div>
+
+
+
+    <div id="modal" class="bg-gray-400 mt-20 w-[700px] mx-auto mb-5 p-10 z-50 hidden">
+    
+        <h1 class="text-4xl font-bold mb-8">Modal Title!</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis veritatis voluptates. Incidunt, nihil placeat. Dolore iure nostrum inventore similique, possimus illum eius repellendus error eveniet hic minima cumque ex unde accusamus nisi perspiciatis praesentium quam sed labore ipsa vitae nesciunt nihil officia quos? Deserunt blanditiis esse velit nam aut rerum. Soluta, voluptatibus tenetur. Accusantium temporibus, distinctio nisi sapiente dolore nobis consequatur iure et. Laboriosam assumenda deserunt, ducimus asperiores minima nulla ut est possimus ab, illo aspernatur, voluptatibus beatae dolores magni quasi? Consequatur ex incidunt, minus, qui amet et expedita illo culpa commodi repellendus dolorum? Quibusdam nisi obcaecati ipsa consectetur.</p>
+        <div class="text-center mt-5">
+            <button id="close-modal" class="bg-red-500 py-2 text-black hover:bg-[purple] hover:text-white px-4 rounded-lg font-bold">Close Modal</button>
+        </div> 
+       
+        
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openModalBtn = document.getElementById('open-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modal = document.getElementById('modal');
+
+
+            openModalBtn.addEventListener('click',() =>{
+                modal.classList.remove('hidden');
+            })
+
+            openModalBtn.addEventListener('click',() =>{
+                modal.classList.add('hidden');
+            })
+
+
+        })
+
+    </script>
+
+
+    <script src="tailwind.config.js"></script>
+</body>
+</html>
