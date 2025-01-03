@@ -7,37 +7,46 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        @keyframes fadein{
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+
+        .fade-in{
+            animation: fadein 0.2s case-out forwards;
+        }
+    </style>
+
 </head>
 <body>
 
-    <div class="text-center mt-64">
+   
+
+    <div id="modal" class=" fixed inset 0 bg-gray-400 bg-opacity-50 hidden justify-center items-center z-50 ">
+        <div class="flex justify-center items-center h-full w-full">
+            <div class="bg-white rounded-lg w-1/2 p-10 fade-in modal-content">
+
+                <div class="mb-4">
+                    <h1 class="text-4xl font-bold ">Modal Title!</h1>
+                </div>
+                
+                <div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis veritatis voluptates. Incidunt, nihil placeat. Dolore iure nostrum inventore similique, possimus illum eius repellendus error eveniet hic minima cumque ex unde accusamus nisi perspiciatis praesentium quam sed labore ipsa vitae nesciunt nihil officia quos? Deserunt blanditiis esse velit nam aut rerum. Soluta, voluptatibus tenetur. Accusantium temporibus, distinctio nisi sapiente dolore nobis consequatur iure et. Laboriosam assumenda deserunt, ducimus asperiores minima nulla ut est possimus ab, illo aspernatur, voluptatibus beatae dolores magni quasi? Consequatur ex incidunt, minus, qui amet et expedita illo culpa commodi repellendus dolorum? Quibusdam nisi obcaecati ipsa consectetur.</p>
+                </div>
+                
+                <div class=" mt-5">
+                    <button id="close-modal" class="bg-red-500 py-2 text-black hover:bg-[purple] hover:text-white px-4 rounded-lg font-bold">Close Modal</button>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-20">
         <button id="open-modal" class="bg-blue-500 py-2 text-white hover:bg-[yellow] hover:text-black px-4 rounded-lg font-bold">Open Modal</button>
     </div>
-
-
-
-    <div id="modal" class="bg-gray-400 mt-20 w-[700px] mx-auto mb-5 p-10 z-50 hidden">
     
-        <h1 class="text-4xl font-bold mb-8">Modal Title!</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis veritatis voluptates. Incidunt, nihil placeat. Dolore iure nostrum inventore similique, possimus illum eius repellendus error eveniet hic minima cumque ex unde accusamus nisi perspiciatis praesentium quam sed labore ipsa vitae nesciunt nihil officia quos? Deserunt blanditiis esse velit nam aut rerum. Soluta, voluptatibus tenetur. Accusantium temporibus, distinctio nisi sapiente dolore nobis consequatur iure et. Laboriosam assumenda deserunt, ducimus asperiores minima nulla ut est possimus ab, illo aspernatur, voluptatibus beatae dolores magni quasi? Consequatur ex incidunt, minus, qui amet et expedita illo culpa commodi repellendus dolorum? Quibusdam nisi obcaecati ipsa consectetur.</p>
-        <div class="text-center mt-5">
-            <button id="close-modal" class="bg-red-500 py-2 text-black hover:bg-[purple] hover:text-white px-4 rounded-lg font-bold">Close Modal</button>
-        </div> 
-       
-        
-    </div>
     
-
-
-
-
-
-
-
-
-
-
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const openModalBtn = document.getElementById('open-modal');
@@ -51,10 +60,8 @@
 
             openModalBtn.addEventListener('click',() =>{
                 modal.classList.add('hidden');
-            })
-
-
-        })
+            });
+        });
 
     </script>
 
